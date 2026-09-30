@@ -1,68 +1,92 @@
-import Image from "next/image";
+"use client";
+
+const socialLinks = [
+  {
+    name: "Instagram",
+    url: "https://www.instagram.com/_inspofashions?stkn=MXdxOTVlY2R4dWdrZQ==",
+    icon: (
+      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.265-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12c0-3.403 2.759-6.162 6.162-6.162 3.403 0 6.162 2.759 6.162 6.162 0 3.403-2.759 6.162-6.162 6.162-3.403 0-6.162-2.759-6.162-6.162zm2.889 0c0 1.821 1.452 3.273 3.273 3.273 1.821 0 3.273-1.452 3.273-3.273 0-1.821-1.452-3.273-3.273-3.273-1.821 0-3.273 1.452-3.273 3.273zm11.926-6.413c0 .795.645 1.44 1.44 1.44s1.44-.645 1.44-1.44-.645-1.44-1.44-1.44-1.44.645-1.44 1.44z" />
+      </svg>
+    ),
+  },
+  {
+    name: "WhatsApp",
+    url: "",
+    icon: (
+      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a6.963 6.963 0 00-6.922 6.928c0 1.529.417 3.01 1.209 4.313L2.98 19.668l4.579-1.393a6.957 6.957 0 004.064 1.308h.004c3.83 0 6.945-3.118 6.945-6.95 0-1.855-.793-3.594-2.229-4.84-1.436-1.246-3.352-1.93-5.359-1.93m11.462-3.384c-3.582 3.583-9.405 3.583-12.987 0-3.582-3.582-3.582-9.405 0-12.987 3.582-3.583 9.405-3.583 12.987 0 3.583 3.582 3.583 9.405 0 12.987M23.5 11.996C23.5 5.868 18.627.996 12.5.996S1.5 5.869 1.5 12c0 6.631 4.872 11.5 10.5 11.5 5.628 0 10.5-4.869 10.5-11.504" />
+      </svg>
+    ),
+  },
+  {
+    name: "YouTube",
+    url: "https://youtube.com/@inspostitch-x4n",
+    icon: (
+      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+      </svg>
+    ),
+  },
+  {
+    name: "Facebook",
+    url: "https://www.facebook.com/share/1DgzZttKoC/",
+    icon: (
+      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+      </svg>
+    ),
+  },
+  {
+    name: "Official Website",
+    url: "https://storefrontinspofashion.vercel.app",
+    icon: (
+      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 2c5.514 0 10 4.486 10 10s-4.486 10-10 10S2 17.514 2 12 6.486 2 12 2zm3.5 10c0 1.93-1.57 3.5-3.5 3.5S8.5 13.93 8.5 12 10.07 8.5 12 8.5s3.5 1.57 3.5 3.5zM12 3c-.828 0-1.5.672-1.5 1.5S11.172 6 12 6s1.5-.672 1.5-1.5S12.828 3 12 3zm7 9c0 .828-.672 1.5-1.5 1.5S16 12.828 16 12s.672-1.5 1.5-1.5S19 11.172 19 12zm-14 0c0 .828-.672 1.5-1.5 1.5S3 12.828 3 12s.672-1.5 1.5-1.5S5 11.172 5 12z" />
+      </svg>
+    ),
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.js
-            </code>{" "}
-            file.
+    <div className="min-h-screen bg-[#F9F6F0] flex flex-col items-center justify-center px-6 py-12">
+      <main className="w-full max-w-md flex flex-col items-center justify-center space-y-12">
+        
+        {/* Logo */}
+        <div className="space-y-3 text-center">
+          <h1 className="text-4xl md:text-5xl font-light tracking-wider text-[#2D2A2A]">
+            INSPO FASHIONS
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <div className="h-px bg-[#C48B8B] w-12 mx-auto"></div>
+        </div>
+
+        {/* Brand Description */}
+        <div className="text-center space-y-2">
+          <p className="text-lg md:text-xl text-[#C48B8B] font-light tracking-wide">
+            Comfort meets elegance.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        {/* Social Media Section */}
+        <div className="w-full pt-8 border-t border-[#E8E2DA]">
+          <p className="text-center text-sm text-[#6B6565] uppercase tracking-widest font-light">
+            Connect with us
+          </p>
+          <div className="mt-8 flex flex-col gap-3 w-full">
+            {socialLinks.map((link) => (
+              <button
+                key={link.name}
+                onClick={() => link.url && window.open(link.url, "_blank")}
+                className="w-full py-3 px-4 rounded-full flex items-center justify-center gap-2 transition-all duration-200 font-light tracking-wide text-sm bg-[#FFFFFF] border-2 border-[#E8E2DA] text-[#2D2A2A] hover:border-[#C48B8B] hover:bg-[#F4EFEA]"
+              >
+                <span className="flex-shrink-0 text-[#2D2A2A]">{link.icon}</span>
+                <span>{link.name}</span>
+              </button>
+            ))}
+          </div>
         </div>
+
       </main>
     </div>
   );
