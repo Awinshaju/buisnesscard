@@ -3,23 +3,11 @@
 import Image from "next/image";
 
 const socialLinks = [
-  {
-    name: "Instagram",
-    url: "https://www.instagram.com/_inspofashions?stkn=MXdxOTVlY2R4dWdrZQ==",
-    icon: "/instagram.png",
-    description: "Updates • New Arrivals",
-  },
-  {
+   {
     name: "WhatsApp",
     url: "https://wa.me/917012087161",
     icon: "/whatsapp.png",
     description: "Chat with us",
-  },
-  {
-    name: "YouTube",
-    url: "https://youtube.com/@inspostitch-x4n",
-    icon: "/youtube.png",
-    description: "Behind the scenes",
   },
   {
     name: "Facebook",
@@ -27,6 +15,20 @@ const socialLinks = [
     icon: "/facebook.png",
     description: "Our community",
   },
+  {
+    name: "Instagram",
+    url: "https://www.instagram.com/_inspofashions?stkn=MXdxOTVlY2R4dWdrZQ==",
+    icon: "/instagram.png",
+    description: "Updates • New Arrivals",
+  },
+ 
+  {
+    name: "YouTube",
+    url: "https://youtube.com/@inspostitch-x4n",
+    icon: "/youtube.png",
+    description: "Behind the scenes",
+  },
+  
   {
     name: "Shop Collection",
     url: "https://storefrontinspofashion.vercel.app",
@@ -68,12 +70,12 @@ export default function Home() {
           {/* Logo */}
           <div className="mb-8 sm:mb-10 md:mb-12 drop-shadow-lg">
             <Image
-              src="/inspo-logo.jpg"
+              src="/out.png"
               alt="Inspo Fashions Logo"
-              width={200}
-              height={140}
+              width={500}
+              height={350}
               priority
-              className="w-auto h-auto max-w-[160px] sm:max-w-[160px] md:max-w-[220px] object-contain"
+              className="w-auto h-auto max-w-[200px] sm:max-w-[240px] md:max-w-[300px] object-contain"
             />
           </div>
 
@@ -87,13 +89,8 @@ export default function Home() {
             Your Comfort Story
           </h1>
 
-          {/* Tagline */}
-          <p className="text-sm sm:text-base md:text-lg italic text-white font-light mb-6 md:mb-8 text-center drop-shadow-md">
-            Comfort meets elegance.
-          </p>
-
           {/* Categories */}
-          <p className="text-xs sm:text-sm tracking-widest uppercase font-light text-white text-center drop-shadow-md mb-12 md:mb-16">
+          <p className="text-xs sm:text-sm tracking-widest uppercase font-light text-white text-center drop-shadow-md mb-4 md:mb-5">
             Nighties • Frock Nighties • Everyday Comfort
           </p>
         </div>
@@ -148,27 +145,27 @@ export default function Home() {
       </div>
 
       {/* Footer */}
-      <div className="w-full bg-black text-white px-6 py-16 md:py-20">
+      <div className="w-full bg-black text-white px-6 py-6 md:py-8">
         <div className="max-w-3xl mx-auto">
           
           {/* Features Grid */}
-          <div className="grid grid-cols-3 gap-4 md:gap-8 mb-12 md:mb-16 text-center">
+          <div className="grid grid-cols-3 gap-6 md:gap-8 mb-6 md:mb-8 text-center">
             <div className="flex flex-col items-center">
-              <p className="text-xl md:text-2xl mb-2 md:mb-4">☁️</p>
+              <p className="text-lg md:text-2xl mb-2 md:mb-3">☁️</p>
               <p className="text-xs md:text-sm font-light uppercase tracking-widest">
                 Soft Fabrics
               </p>
               <p className="text-xs text-gray-400 font-light mt-1">Gentle on you</p>
             </div>
             <div className="flex flex-col items-center">
-              <p className="text-xl md:text-2xl mb-2 md:mb-4">🌙</p>
+              <p className="text-lg md:text-2xl mb-2 md:mb-3">🌙</p>
               <p className="text-xs md:text-sm font-light uppercase tracking-widest">
                 All Day Comfort
               </p>
               <p className="text-xs text-gray-400 font-light mt-1">Day & Night</p>
             </div>
             <div className="flex flex-col items-center">
-              <p className="text-xl md:text-2xl mb-2 md:mb-4">💝</p>
+              <p className="text-lg md:text-2xl mb-2 md:mb-3">💝</p>
               <p className="text-xs md:text-sm font-light uppercase tracking-widest">
                 Timeless Styles
               </p>
@@ -177,7 +174,7 @@ export default function Home() {
           </div>
 
           {/* Divider and Closing Text */}
-          <div className="flex items-center gap-6 justify-center">
+          <div className="flex items-center gap-5 justify-center">
             <div className="h-px bg-white flex-grow max-w-[100px]" />
             <p className="text-xs md:text-sm font-light uppercase tracking-widest whitespace-nowrap">
               Made for your quiet moments
