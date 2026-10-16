@@ -109,12 +109,12 @@ export default function Home() {
 
         {/* Social Links Section - Inside Hero at Bottom */}
         <div className="relative z-10 w-full px-4 sm:px-6 pb-12 md:pb-16">
-          <div className="max-w-xs sm:max-w-md mx-auto space-y-3 md:space-y-4">
+          <div className="max-w-xs sm:max-w-md mx-auto space-y-3 md:space-y-4 overflow-hidden rounded-3xl">
             {socialLinks.map((link, index) => (
               <button
                 key={link.name}
                 onClick={() => link.url && window.open(link.url, "_blank")}
-                className={`w-full group transition-all duration-700 ease-out backdrop-blur-sm bg-white/10 ${
+                className={`w-full group transition-all duration-700 ease-out ${
                   isLoaded
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-4"
@@ -123,7 +123,7 @@ export default function Home() {
                   transitionDelay: isLoaded ? `${index * 150}ms` : "0ms",
                 }}
               >
-                <div className="border border-white/80 rounded-full px-5 sm:px-6 py-3 sm:py-4 md:py-5 flex items-center justify-between gap-4 transition-all duration-300 hover:bg-white/20 hover:border-white">
+                <div className="border border-white/80 rounded-full px-5 sm:px-6 py-3 sm:py-4 md:py-5 flex items-center justify-between gap-4 transition-all duration-300 hover:bg-white/20 hover:border-white backdrop-blur-sm bg-white/10 overflow-hidden">
                   
                   {/* Icon and Text Container */}
                   <div className="flex items-center gap-4 flex-1">
