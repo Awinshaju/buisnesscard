@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 const socialLinks = [
    {
@@ -38,6 +39,12 @@ const socialLinks = [
 ];
 
 export default function Home() {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
+
   return (
     <div className="min-h-screen w-full bg-black flex flex-col">
       
@@ -98,13 +105,20 @@ export default function Home() {
         {/* Social Links Section - Inside Hero at Bottom */}
         <div className="relative z-10 w-full px-4 sm:px-6 pb-12 md:pb-16">
           <div className="max-w-xs sm:max-w-md mx-auto space-y-3 md:space-y-4">
-            {socialLinks.map((link) => (
+            {socialLinks.map((link, index) => (
               <button
                 key={link.name}
                 onClick={() => link.url && window.open(link.url, "_blank")}
-                className="w-full group"
+                className={`w-full group transition-all duration-500 ease-out backdrop-blur-sm bg-white/10 ${
+                  isLoaded
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-4"
+                }`}
+                style={{
+                  transitionDelay: isLoaded ? `${index * 100}ms` : "0ms",
+                }}
               >
-                <div className="border border-white/80 rounded-full px-5 sm:px-6 py-3 sm:py-4 md:py-5 flex items-center justify-between gap-4 transition-all duration-300 hover:bg-white/20 hover:border-white backdrop-blur-sm bg-white/10">
+                <div className="border border-white/80 rounded-full px-5 sm:px-6 py-3 sm:py-4 md:py-5 flex items-center justify-between gap-4 transition-all duration-300 hover:bg-white/20 hover:border-white">
                   
                   {/* Icon and Text Container */}
                   <div className="flex items-center gap-4 flex-1">
@@ -134,8 +148,8 @@ export default function Home() {
                   </div>
 
                   {/* Circular Arrow */}
-                  <div className="flex-shrink-0 w-7 h-7 md:w-8 md:h-8 flex items-center justify-center border border-white/60 rounded-full group-hover:bg-white group-hover:border-white transition-all">
-                    <span className="text-white group-hover:text-black text-lg">→</span>
+                  <div className="flex-shrink-0 w-8 h-8 md:w-9 md:h-9 flex items-center justify-center rounded-full border-2 border-white/80 group-hover:border-white group-hover:bg-white transition-all duration-300">
+                    <span className="text-white group-hover:text-black text-lg font-light -mt-0.5">→</span>
                   </div>
                 </div>
               </button>
@@ -145,36 +159,36 @@ export default function Home() {
       </div>
 
       {/* Footer */}
-      <div className="w-full bg-black text-white px-6 py-4 md:py-5">
+      <div className="w-full bg-black text-white px-6 py-8 md:py-10">
         <div className="max-w-3xl mx-auto">
           
           {/* Features Grid */}
-          <div className="grid grid-cols-3 gap-6 md:gap-8 mb-4 md:mb-5 text-center">
+          <div className="grid grid-cols-3 gap-8 md:gap-12 mb-8 md:mb-10 text-center">
             <div className="flex flex-col items-center">
-              <p className="text-lg md:text-2xl mb-1 md:mb-2">☁️</p>
+              <p className="text-lg md:text-2xl mb-3 md:mb-4">☁️</p>
               <p className="text-xs md:text-sm font-light uppercase tracking-widest">
                 Soft Fabrics
               </p>
-              <p className="text-xs text-gray-400 font-light mt-1">Gentle on you</p>
+              <p className="text-xs text-gray-400 font-light mt-2">Gentle on you</p>
             </div>
             <div className="flex flex-col items-center">
-              <p className="text-lg md:text-2xl mb-1 md:mb-2">🌙</p>
+              <p className="text-lg md:text-2xl mb-3 md:mb-4">🌙</p>
               <p className="text-xs md:text-sm font-light uppercase tracking-widest">
                 All Day Comfort
               </p>
-              <p className="text-xs text-gray-400 font-light mt-1">Day & Night</p>
+              <p className="text-xs text-gray-400 font-light mt-2">Day & Night</p>
             </div>
             <div className="flex flex-col items-center">
-              <p className="text-lg md:text-2xl mb-1 md:mb-2">💝</p>
+              <p className="text-lg md:text-2xl mb-3 md:mb-4">💝</p>
               <p className="text-xs md:text-sm font-light uppercase tracking-widest">
                 Timeless Styles
               </p>
-              <p className="text-xs text-gray-400 font-light mt-1">Made for you</p>
+              <p className="text-xs text-gray-400 font-light mt-2">Made for you</p>
             </div>
           </div>
 
           {/* Divider and Closing Text */}
-          <div className="flex items-center gap-5 justify-center">
+          <div className="flex items-center gap-6 justify-center">
             <div className="h-px bg-white flex-grow max-w-[100px]" />
             <p className="text-xs md:text-sm font-light uppercase tracking-widest whitespace-nowrap">
               Made for your quiet moments
