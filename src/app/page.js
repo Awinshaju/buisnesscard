@@ -6,151 +6,149 @@ const socialLinks = [
   {
     name: "Instagram",
     url: "https://www.instagram.com/_inspofashions?stkn=MXdxOTVlY2R4dWdrZQ==",
-    icon: "/insta.jpg",
-    description: "Style • Updates • New Arrivals",
+    icon: "/instagram.png",
+    description: "Updates • New Arrivals",
   },
   {
     name: "WhatsApp",
     url: "https://wa.me/917012087161",
-    icon: "/whatsapp.jpg",
+    icon: "/whatsapp.png",
     description: "Chat with us",
   },
   {
     name: "YouTube",
     url: "https://youtube.com/@inspostitch-x4n",
-    icon: "/youtube.jpg",
+    icon: "/youtube.png",
     description: "Behind the scenes",
   },
   {
     name: "Facebook",
     url: "https://www.facebook.com/share/1DgzZttKoC/",
-    icon: "/facebook.jpg",
+    icon: "/facebook.png",
     description: "Our community",
   },
   {
     name: "Shop Collection",
     url: "https://storefrontinspofashion.vercel.app",
-    icon: "/website.jpg",
+    icon: "/website.png",
     description: "Explore our nightwear",
   },
 ];
 
 export default function Home() {
   return (
-    <div className="min-h-screen w-full bg-white flex flex-col">
+    <div className="min-h-screen w-full bg-black flex flex-col">
       
-      {/* Hero Section with Background Image */}
-      <div className="relative w-full bg-white pt-8 pb-12 md:pt-16 md:pb-20 px-6 min-h-[500px] md:min-h-[600px]">
+      {/* Full-Screen Hero Section with Background Image */}
+      <div className="relative w-full flex-1 flex flex-col overflow-hidden">
         
         {/* Hero Background with Nightwear Image */}
-        <div className="absolute inset-0 w-full h-full overflow-hidden">
+        <div className="absolute inset-0 w-full h-full">
           <Image
             src="/nightwear-hero.jpg"
             alt="Nightwear lifestyle"
             fill
-            className="object-cover md:object-right"
+            sizes="100vw"
+            className="object-cover"
             style={{
-              objectPosition: "center center",
+              objectPosition: "50% 30%",
             }}
             priority
-            quality={85}
+            quality={95}
           />
-          {/* Minimal white overlay for text contrast - 10% opacity */}
-          <div className="absolute inset-0 bg-white opacity-10" />
+          {/* Gradient overlay for better text contrast and visual depth */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/20 to-black/50" />
+          {/* Additional side gradient for mobile readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/20" />
         </div>
 
-        {/* Hero Content */}
-        <div className="relative z-10 max-w-2xl mx-auto flex flex-col items-center h-full justify-center">
+        {/* Hero Content - Centered */}
+        <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-8 md:py-12">
           
           {/* Logo */}
-          <div className="mb-6 md:mb-8">
+          <div className="mb-8 sm:mb-10 md:mb-12 drop-shadow-lg">
             <Image
               src="/inspo-logo.jpg"
               alt="Inspo Fashions Logo"
               width={200}
               height={140}
               priority
-              className="w-auto h-auto max-w-[140px] md:max-w-[200px] object-contain"
+              className="w-auto h-auto max-w-[120px] sm:max-w-[160px] md:max-w-[220px] object-contain"
             />
           </div>
 
           {/* Eyebrow Text */}
-          <p className="text-xs md:text-sm tracking-widest uppercase font-light mb-4 text-black">
+          <p className="text-xs sm:text-sm tracking-widest uppercase font-light mb-4 sm:mb-5 text-white drop-shadow-md">
             Women's Nightwear
           </p>
 
           {/* Main Headline - Serif */}
-          <h1 className="text-4xl md:text-6xl font-serif font-normal text-black mb-3 md:mb-4 text-center leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-serif font-normal text-white mb-4 md:mb-5 text-center leading-tight drop-shadow-lg">
             Your Comfort Story
           </h1>
 
           {/* Tagline */}
-          <p className="text-sm md:text-base italic text-black font-light mb-4 md:mb-5 text-center">
+          <p className="text-sm sm:text-base md:text-lg italic text-white font-light mb-6 md:mb-8 text-center drop-shadow-md">
             Comfort meets elegance.
           </p>
 
           {/* Categories */}
-          <p className="text-xs md:text-sm tracking-widest uppercase font-light text-black text-center">
+          <p className="text-xs sm:text-sm tracking-widest uppercase font-light text-white text-center drop-shadow-md mb-12 md:mb-16">
             Nighties • Frock Nighties • Everyday Comfort
           </p>
         </div>
-      </div>
 
-      {/* Curved Transition - Wave SVG */}
-      <svg className="w-full h-auto" viewBox="0 0 1200 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,50 Q300,0 600,50 T1200,50 L1200,100 L0,100 Z" fill="#FFFFFF" />
-      </svg>
+        {/* Social Links Section - Inside Hero at Bottom */}
+        <div className="relative z-10 w-full px-4 sm:px-6 pb-12 md:pb-16">
+          <div className="max-w-xs sm:max-w-md mx-auto space-y-3 md:space-y-4">
+            {socialLinks.map((link) => (
+              <button
+                key={link.name}
+                onClick={() => link.url && window.open(link.url, "_blank")}
+                className="w-full group"
+              >
+                <div className="border border-white/80 rounded-full px-5 sm:px-6 py-3 sm:py-4 md:py-5 flex items-center justify-between gap-4 transition-all duration-300 hover:bg-white/20 hover:border-white backdrop-blur-sm bg-white/10">
+                  
+                  {/* Icon and Text Container */}
+                  <div className="flex items-center gap-4 flex-1">
+                    {/* Icon */}
+                    <div className="flex-shrink-0 flex items-center justify-center w-6 h-6 md:w-7 md:h-7">
+                      <Image
+                        src={link.icon}
+                        alt={`${link.name} icon`}
+                        width={28}
+                        height={28}
+                        className="w-full h-full object-contain group-hover:invert transition-all"
+                      />
+                    </div>
 
-      {/* Social Links Section */}
-      <div className="w-full bg-white px-6 py-10 md:py-16">
-        <div className="max-w-sm mx-auto space-y-3 md:space-y-4">
-          {socialLinks.map((link) => (
-            <button
-              key={link.name}
-              onClick={() => link.url && window.open(link.url, "_blank")}
-              className="w-full group"
-            >
-              <div className="border border-black rounded-full px-6 py-4 md:py-5 flex items-center justify-between gap-4 transition-all duration-300 hover:bg-black bg-white">
-                
-                {/* Icon and Text Container */}
-                <div className="flex items-center gap-4 flex-1">
-                  {/* Icon */}
-                  <div className="flex-shrink-0 flex items-center justify-center w-6 h-6 md:w-7 md:h-7">
-                    <Image
-                      src={link.icon}
-                      alt={`${link.name} icon`}
-                      width={28}
-                      height={28}
-                      className="w-full h-full object-contain group-hover:invert transition-all"
-                    />
+                    {/* Divider */}
+                    <div className="w-px h-5 bg-white/60 group-hover:bg-white transition-colors" />
+
+                    {/* Text */}
+                    <div className="text-left">
+                      <p className="text-sm md:text-base font-semibold text-white group-hover:text-white transition-colors">
+                        {link.name}
+                      </p>
+                      <p className="text-xs text-white/70 group-hover:text-white/90 transition-colors uppercase tracking-wider font-light">
+                        {link.description}
+                      </p>
+                    </div>
                   </div>
 
-                  {/* Divider */}
-                  <div className="w-px h-6 bg-black group-hover:bg-white transition-colors" />
-
-                  {/* Text */}
-                  <div className="text-left">
-                    <p className="text-sm md:text-base font-semibold text-black group-hover:text-white transition-colors">
-                      {link.name}
-                    </p>
-                    <p className="text-xs text-gray-500 group-hover:text-gray-300 transition-colors uppercase tracking-wider font-light">
-                      {link.description}
-                    </p>
+                  {/* Circular Arrow */}
+                  <div className="flex-shrink-0 w-7 h-7 md:w-8 md:h-8 flex items-center justify-center border border-white/60 rounded-full group-hover:bg-white group-hover:border-white transition-all">
+                    <span className="text-white group-hover:text-black text-lg">→</span>
                   </div>
                 </div>
-
-                {/* Circular Arrow */}
-                <div className="flex-shrink-0 w-8 h-8 md:w-9 md:h-9 flex items-center justify-center border border-black rounded-full group-hover:bg-white group-hover:border-white transition-all">
-                  <span className="text-black group-hover:text-black text-lg">→</span>
-                </div>
-              </div>
-            </button>
-          ))}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 
       {/* Footer */}
-      <div className="w-full bg-black text-white px-6 py-16 md:py-20 mt-auto">
+      <div className="w-full bg-black text-white px-6 py-16 md:py-20">
         <div className="max-w-3xl mx-auto">
           
           {/* Features Grid */}
