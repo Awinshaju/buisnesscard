@@ -109,13 +109,13 @@ export default function Home() {
               <button
                 key={link.name}
                 onClick={() => link.url && window.open(link.url, "_blank")}
-                className={`w-full group transition-all duration-500 ease-out backdrop-blur-sm bg-white/10 ${
+                className={`w-full group transition-all duration-700 ease-out backdrop-blur-sm bg-white/10 ${
                   isLoaded
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-4"
                 }`}
                 style={{
-                  transitionDelay: isLoaded ? `${index * 100}ms` : "0ms",
+                  transitionDelay: isLoaded ? `${index * 150}ms` : "0ms",
                 }}
               >
                 <div className="border border-white/80 rounded-full px-5 sm:px-6 py-3 sm:py-4 md:py-5 flex items-center justify-between gap-4 transition-all duration-300 hover:bg-white/20 hover:border-white">
@@ -149,7 +149,13 @@ export default function Home() {
 
                   {/* Circular Arrow */}
                   <div className="flex-shrink-0 w-8 h-8 md:w-9 md:h-9 flex items-center justify-center rounded-full border-2 border-white/80 group-hover:border-white group-hover:bg-white transition-all duration-300">
-                    <span className="text-white group-hover:text-black text-lg font-light -mt-0.5">→</span>
+                    <Image
+                      src="/icons8-arrow-right-100 (1).png"
+                      alt="Arrow"
+                      width={20}
+                      height={20}
+                      className="w-5 h-5 object-contain brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition-all"
+                    />
                   </div>
                 </div>
               </button>
