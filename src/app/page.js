@@ -98,13 +98,16 @@ export default function Home() {
         {/* Social Links Section - Inside Hero at Bottom */}
         <div className="relative z-10 w-full px-4 sm:px-6 pb-12 md:pb-16">
           <div className="max-w-xs sm:max-w-md mx-auto space-y-3 md:space-y-4">
-            {socialLinks.map((link) => (
+            {socialLinks.map((link, index) => (
               <button
                 key={link.name}
                 onClick={() => link.url && window.open(link.url, "_blank")}
                 className="w-full group"
+                style={{
+                  animation: `slideUp 0.6s ease-out ${index * 0.1}s both`,
+                }}
               >
-                <div className="border border-white/80 rounded-full px-5 sm:px-6 py-3 sm:py-4 md:py-5 flex items-center justify-between gap-4 transition-all duration-300 hover:bg-white/20 hover:border-white backdrop-blur-sm bg-white/10">
+                <div className="border border-white/80 rounded-full px-5 sm:px-6 py-3 sm:py-4 md:py-5 flex items-center justify-between gap-4 transition-all duration-300 hover:bg-white/20 hover:border-white backdrop-blur-md bg-white/15 hover:scale-105">
                   
                   {/* Icon and Text Container */}
                   <div className="flex items-center gap-4 flex-1">
