@@ -90,7 +90,7 @@ export default function Home() {
           </h1>
 
           {/* Categories */}
-          <p className="text-xs sm:text-sm tracking-widest uppercase font-light text-white text-center drop-shadow-md mb-0 md:mb-1">
+          <p className="text-xs sm:text-sm tracking-widest uppercase font-light text-white text-center drop-shadow-md mb-6 md:mb-8">
             Nighties • Frock Nighties • Everyday Comfort
           </p>
         </div>
