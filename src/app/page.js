@@ -114,7 +114,7 @@ export default function Home() {
               <button
                 key={link.name}
                 onClick={() => link.url && window.open(link.url, "_blank")}
-                className={`w-full group transition-all duration-700 ease-out ${
+                className={`w-full group transition-all duration-700 ease-out backdrop-blur-sm bg-white/10 rounded-full overflow-hidden ${
                   isLoaded
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-4"
@@ -123,7 +123,7 @@ export default function Home() {
                   transitionDelay: isLoaded ? `${index * 150}ms` : "0ms",
                 }}
               >
-                <div className="border border-white/80 rounded-full px-5 sm:px-6 py-3 sm:py-4 md:py-5 flex items-center justify-between gap-4 transition-all duration-300 hover:bg-white/20 hover:border-white backdrop-blur-sm bg-white/10 overflow-hidden">
+                <div className="border border-white/80 rounded-full px-5 sm:px-6 py-3 sm:py-4 md:py-5 flex items-center justify-between gap-4 transition-all duration-300 md:hover:bg-transparent md:hover:border-white/80 hover:bg-white/20 hover:border-white">
                   
                   {/* Icon and Text Container */}
                   <div className="flex items-center gap-4 flex-1">
@@ -134,7 +134,7 @@ export default function Home() {
                         alt={`${link.name} icon`}
                         width={28}
                         height={28}
-                        className="w-full h-full object-contain group-hover:invert transition-all"
+                        className="w-full h-full object-contain transition-all"
                       />
                     </div>
 
