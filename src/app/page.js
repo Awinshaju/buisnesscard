@@ -73,7 +73,7 @@ export default function Home() {
               width={200}
               height={140}
               priority
-              className="w-auto h-auto max-w-[120px] sm:max-w-[160px] md:max-w-[220px] object-contain"
+              className="w-auto h-auto max-w-[160px] sm:max-w-[160px] md:max-w-[220px] object-contain"
             />
           </div>
 
