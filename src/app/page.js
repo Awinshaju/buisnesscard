@@ -165,41 +165,41 @@ export default function Home() {
       </div>
 
       {/* Footer */}
-      <div className="w-full bg-black text-white px-6 py-8 md:py-10">
+      <div className="w-full bg-black text-white px-6 py-5 md:py-6">
         <div className="max-w-3xl mx-auto">
           
           {/* Features Grid */}
-          <div className="grid grid-cols-3 gap-8 md:gap-12 mb-8 md:mb-10 text-center">
+          <div className="grid grid-cols-3 gap-6 md:gap-10 mb-5 md:mb-6 text-center">
             <div className="flex flex-col items-center">
-              <p className="text-lg md:text-2xl mb-3 md:mb-4">☁️</p>
+              <p className="text-base md:text-xl mb-2 md:mb-3">☁️</p>
               <p className="text-xs md:text-sm font-light uppercase tracking-widest">
                 Soft Fabrics
               </p>
-              <p className="text-xs text-gray-400 font-light mt-2">Gentle on you</p>
+              <p className="text-xs text-gray-400 font-light mt-1">Gentle on you</p>
             </div>
             <div className="flex flex-col items-center">
-              <p className="text-lg md:text-2xl mb-3 md:mb-4">🌙</p>
+              <p className="text-base md:text-xl mb-2 md:mb-3">🌙</p>
               <p className="text-xs md:text-sm font-light uppercase tracking-widest">
                 All Day Comfort
               </p>
-              <p className="text-xs text-gray-400 font-light mt-2">Day & Night</p>
+              <p className="text-xs text-gray-400 font-light mt-1">Day & Night</p>
             </div>
             <div className="flex flex-col items-center">
-              <p className="text-lg md:text-2xl mb-3 md:mb-4">💝</p>
+              <p className="text-base md:text-xl mb-2 md:mb-3">💝</p>
               <p className="text-xs md:text-sm font-light uppercase tracking-widest">
                 Timeless Styles
               </p>
-              <p className="text-xs text-gray-400 font-light mt-2">Made for you</p>
+              <p className="text-xs text-gray-400 font-light mt-1">Made for you</p>
             </div>
           </div>
 
           {/* Divider and Closing Text */}
-          <div className="flex items-center gap-6 justify-center">
-            <div className="h-px bg-white flex-grow max-w-[100px]" />
+          <div className="flex items-center gap-5 justify-center">
+            <div className="h-px bg-white flex-grow max-w-[80px]" />
             <p className="text-xs md:text-sm font-light uppercase tracking-widest whitespace-nowrap">
               Made for your quiet moments
             </p>
-            <div className="h-px bg-white flex-grow max-w-[100px]" />
+            <div className="h-px bg-white flex-grow max-w-[80px]" />
           </div>
         </div>
       </div>
