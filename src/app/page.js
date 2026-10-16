@@ -65,10 +65,10 @@ export default function Home() {
         </div>
 
         {/* Hero Content - Centered */}
-        <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-8 md:py-12">
+        <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-2 md:py-4">
           
           {/* Logo */}
-          <div className="mb-8 sm:mb-10 md:mb-12 drop-shadow-lg">
+          <div className="mb-2 sm:mb-3 md:mb-4 drop-shadow-lg">
             <Image
               src="/out.png"
               alt="Inspo Fashions Logo"
@@ -90,7 +90,7 @@ export default function Home() {
           </h1>
 
           {/* Categories */}
-          <p className="text-xs sm:text-sm tracking-widest uppercase font-light text-white text-center drop-shadow-md mb-4 md:mb-5">
+          <p className="text-xs sm:text-sm tracking-widest uppercase font-light text-white text-center drop-shadow-md mb-0 md:mb-1">
             Nighties • Frock Nighties • Everyday Comfort
           </p>
         </div>
@@ -145,27 +145,27 @@ export default function Home() {
       </div>
 
       {/* Footer */}
-      <div className="w-full bg-black text-white px-6 py-6 md:py-8">
+      <div className="w-full bg-black text-white px-6 py-4 md:py-5">
         <div className="max-w-3xl mx-auto">
           
           {/* Features Grid */}
-          <div className="grid grid-cols-3 gap-6 md:gap-8 mb-6 md:mb-8 text-center">
+          <div className="grid grid-cols-3 gap-6 md:gap-8 mb-4 md:mb-5 text-center">
             <div className="flex flex-col items-center">
-              <p className="text-lg md:text-2xl mb-2 md:mb-3">☁️</p>
+              <p className="text-lg md:text-2xl mb-1 md:mb-2">☁️</p>
               <p className="text-xs md:text-sm font-light uppercase tracking-widest">
                 Soft Fabrics
               </p>
               <p className="text-xs text-gray-400 font-light mt-1">Gentle on you</p>
             </div>
             <div className="flex flex-col items-center">
-              <p className="text-lg md:text-2xl mb-2 md:mb-3">🌙</p>
+              <p className="text-lg md:text-2xl mb-1 md:mb-2">🌙</p>
               <p className="text-xs md:text-sm font-light uppercase tracking-widest">
                 All Day Comfort
               </p>
               <p className="text-xs text-gray-400 font-light mt-1">Day & Night</p>
             </div>
             <div className="flex flex-col items-center">
-              <p className="text-lg md:text-2xl mb-2 md:mb-3">💝</p>
+              <p className="text-lg md:text-2xl mb-1 md:mb-2">💝</p>
               <p className="text-xs md:text-sm font-light uppercase tracking-widest">
                 Timeless Styles
               </p>
